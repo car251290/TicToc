@@ -18,8 +18,7 @@ var renderState = {
   };
 
 // for the drawhand and the function of the ctx 
-  
-  var drawHand = function(handState, ctx, cx, cy, maxRadius) {
+var drawHand = function(handState, ctx, cx, cy, maxRadius) {
     ctx.lineWidth = 8;
     ctx.strokeStyle = handState.style;
     ctx.beginPath();
