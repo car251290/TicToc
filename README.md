@@ -46,15 +46,13 @@ rocky.on('draw', function(drawEvent) {
     drawHand(renderState.minute, ctx, cx, cy, maxRadius);
     drawHand(renderState.hour, ctx, cx, cy, maxRadius);
   
-    // Draw a 12 o clock indicator
+   // Draw a 12 o clock indicator
     drawHand({style: 'blue', scale: 0, angle: 0}, ctx, cx, 8, 0);
-    // overdraw center so that no white part of the minute hand is visible
     drawHand({style: 'red', scale: 0, angle: 0}, ctx, cx, cy, 0);
   });
   
-  // listener is called on each full minute and once immediately after registration
+ // listener is called on each full minute and once immediately after registration
   rocky.on('minutechange', function(e) {
-    // WatchfaceHelper will later be extracted as npm module
     var wfh = new Rocky.WatchfaceHelper(e.date);
     renderState.minute.angle = wfh.minuteAngle;
     renderState.hour.angle = wfh.hourAngle;
